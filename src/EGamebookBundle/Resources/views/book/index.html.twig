@@ -1,8 +1,12 @@
 {% extends '@EGamebook/layout.html.twig' %}
 
 {% block body %}
+
+    {#<img class="responsive-img" src="{{ relative_path('') alt="PlayBook" />#}
+
+
     <h1>Books list</h1>
-    {{ dump(books) }}
+    {#{{ dump(books) }}#}
     <table>
         <thead>
             <tr>
@@ -10,7 +14,7 @@
                 <th>Author</th>
                 <th>Editor</th>
                 <th>Year</th>
-                <th>Isbn</th>
+                <th>ISBN</th>
                 <th>Chapters</th>
                 <th>Actions</th>
             </tr>
