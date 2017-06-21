@@ -1,12 +1,11 @@
 {% extends '@EGamebook/layout.html.twig' %}
 
 {% block body %}
+    <h1 class="center">Books list</h1>
+    <div class="container">
+        <div class="row">
+            <div class="card-panel">
 
-    {#<img class="responsive-img" src="{{ relative_path('') alt="PlayBook" />#}
-
-
-    <h1>Books list</h1>
-    {#{{ dump(books) }}#}
     <table>
         <thead>
             <tr>
@@ -54,4 +53,7 @@
             <a href="{{ path('book_new') }}">Create a new book</a>
         </li>
     </ul>
+            </div>
+        </div>
+    </div>
 {% endblock %}
