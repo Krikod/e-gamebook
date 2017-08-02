@@ -1,0 +1,35 @@
+EGamebookBundle\Entity\User:
+    type:  entity
+    table: fos_user
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        firstname:
+            type: string
+            length: 255
+            nullable: true
+        lastname:
+            type: string
+            length: 255
+            nullable: true
+        gender:
+            type: string
+            length: 10
+            nullable: true
+
+    lifecycleCallbacks: {  }
+
+    manyToOne:
+        fichier:
+            targetEntity: EGamebookBundle\Entity\Fichier
+            cascade: ['persist']
+
+    oneToMany:
+        books:
+            targetEntity: EGamebookBundle\Entity\Book
+            mappedBy: user
+            cascade: ["persist"]
+

@@ -1,0 +1,56 @@
+{% extends '@EGamebook/layout.html.twig' %}
+
+
+
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+
+                <div class="col s12 center">
+                    <a href="{{ path('e_gamebook_intro', {'id': book.id }) }}">
+                        {% if book.fichiers.srcs is empty %}
+                            <img class="photohaut responsive-img" src="{{ asset('bundles/platform/img/5973a860478c0.jpeg') }}">
+                        {% else %}
+                            <img class="responsive-img" src="{{ asset('bundles/platform/img/' ~ book.fichiers.srcs[0]) }}">
+                        {% endif %}
+                    </a></div>
+
+        </div>
+
+        <div class="row">
+            <h4 class="reco center-align"><strong>Recommended for Steph</strong></h4>
+
+            <div class="carousel carousel-slider center-align">
+                {% for bookcar in books %}
+                    <a class="carousel-item" href="{{ path('e_gamebook_intro', {'id':bookcar.id}) }}">
+                        {% if bookcar.fichiers.srcs is empty %}
+                            <img class="responsive-img" src="{{ asset('bundles/platform/img/5973a860478c0.jpeg' ) }}">
+                        {% else %}
+                            <img class="responsive-img" src="{{ asset('bundles/platform/img/' ~ bookcar.fichiers.srcs[0] ) }}">
+                        {% endif %}
+                    </a>
+                {% endfor %}
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+
+        $(document).ready(function(){
+            $('.carousel').carousel();
+            $('.slider').slider();
+            $('.carousel.carousel-slider').carousel({fullWidth: true});
+        });
+
+    </script>
+
+{% endblock %}

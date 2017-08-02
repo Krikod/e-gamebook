@@ -1,0 +1,42 @@
+{% extends '@EGamebook/layout.html.twig' %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="card-panel col s12">
+                 <span class="flow-text">
+
+                     {% if app.user.gender == "M" %}
+                         <div class="content_M">
+                              {{ chapter.content }}
+                         </div>
+                     {% else %}
+                         <div class="content_W">
+                   {{ chapter.content }}
+                         </div>
+                     {% endif %}
+                     {{ chapter.decision }}
+
+                     {% if chapter.fichiers.srcs is empty %}
+                         <img class="photohaut responsive-img" src="{{ asset('bundles/platform/img/5973a860478c0.jpeg') }}">
+                        {% else %}
+                         {% for photos in chapter.fichiers.srcs %}
+                             <img class="responsive-img" src="{{ asset('bundles/platform/img/' ~ photos ) }}">
+                         {% endfor %}
+                     {% endif %}
+                 </span>
+
+            <div class="collection">
+                {% for chap in chapter.childs %}
+                    <div class="wrap">
+                        <a href="{{ path('e_gamebook_read', { 'number': chap.number, 'id': idB } ) }}"  class="button">
+                            <span>{{ chap.buttonText }}</span></a><br>
+                    </div>
+
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}

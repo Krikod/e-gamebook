@@ -1,0 +1,30 @@
+chapters_index:
+    path:     /
+    defaults: { _controller: "EGamebookBundle:Chapters:index" }
+    methods:  GET
+
+chapters_show:
+    path:     /show/{id}
+    defaults: { _controller: "EGamebookBundle:Chapters:show" }
+    methods:  GET
+
+chapters_new:
+    path:     /new/{id}
+    defaults: { _controller: "EGamebookBundle:Chapters:new" }
+    methods:  [GET, POST]
+
+chapters_edit:
+    path:     /edit/{id}
+    defaults: { _controller: "EGamebookBundle:Chapters:edit" }
+    methods:  [GET, POST]
+
+chapters_delete:
+    path:     /delete/{id}
+    defaults: { _controller: "EGamebookBundle:Chapters:delete" }
+    methods:  DELETE
+
+chapters_relations:
+    path:     /new_relations/{id}
+    defaults: { _controller: "EGamebookBundle:Chapters:newRelations" }
+    methods: [GET, POST]
+

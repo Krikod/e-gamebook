@@ -1,3 +1,10 @@
-app:
-    resource: '@AppBundle/Controller/'
-    type: annotation
+e_gamebook:
+    resource: "@EGamebookBundle/Resources/config/routing.yml"
+    prefix:   /
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+kms_froala_editor:
+  resource: "@KMSFroalaEditorBundle/Resources/config/routing.yml"
+  prefix:   /froalaeditor
